@@ -1,37 +1,59 @@
-# SAP Repository Template
+[![REUSE status](https://api.reuse.software/badge/github.com/SAP/invoke-plugin-for-pylint)](https://api.reuse.software/info/github.com/SAP/invoke-plugin-for-pylint)
+[![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
+[![Imports: isort](https://img.shields.io/badge/%20imports-isort-%231674b1?style=flat&labelColor=ef8336)](https://pycqa.github.io/isort/)
+[![PyPI version](https://badge.fury.io/py/invoke-plugin-for-pylint.svg)](https://badge.fury.io/py/invoke-plugin-for-pylint)
 
-Default templates for SAP open source repositories, including LICENSE, .reuse/dep5, Code of Conduct, etc... All repositories on github.com/SAP will be created based on this template.
+# Invoke Plugin for Pylint
+This is a plugin for pylint which disables certain checks when using invoke.
 
-## To-Do
+## Installation
+`pip install invoke-plugin-for-pylint`, that's it.
 
-In case you are the maintainer of a new SAP open source project, these are the steps to do with the template files:
+## Usage
+Add `invoke_plugin_for_pylint` to the list of pylint plugins.
 
-- Check if the default license (Apache 2.0) also applies to your project. A license change should only be required in exceptional cases. If this is the case, please change the [license file](LICENSE).
-- Enter the correct metadata for the REUSE tool. See our [wiki page](https://wiki.wdf.sap.corp/wiki/display/ospodocs/Using+the+Reuse+Tool+of+FSFE+for+Copyright+and+License+Information) for details how to do it. You can find an initial .reuse/dep5 file to build on. Please replace the parts inside the single angle quotation marks < > by the specific information for your repository and be sure to run the REUSE tool to validate that the metadata is correct.
-- Adjust the contribution guidelines (e.g. add coding style guidelines, pull request checklists, different license if needed etc.)
-- Add information about your project to this README (name, description, requirements etc). Especially take care for the <your-project> placeholders - those ones need to be replaced with your project name. See the sections below the horizontal line and [our guidelines on our wiki page](https://wiki.wdf.sap.corp/wiki/display/ospodocs/Guidelines+for+README.md+file) what is required and recommended.
-- Remove all content in this README above and including the horizontal line ;)
+## Disabled check
 
-***
+* unused-argument: Each invoke task needs a context argument even if not needed.
+  Therefore his plugin will find all tasks and suppress all `unused-argument` errors when related to the context argument
 
-# Our new open source project
 
-## About this project
+## Configuration
 
-*Insert a short description of your project here...*
+If custom decorators for invoke tasks are used which wrap `invoke.task` the
+`additional-invoke-task-decorators` option by checker `invoke-plugin-for-pylint` can be used.
+It's a csv list of names which indicate an invoke task.
 
-## Requirements and Setup
+Please note, that the names must be full qualified and reflect the name of the final function.
+For example, a decorator factory called "foo" in package "bar" which returns a function called
+"_inner", will result in the name "bar.foo._inner".
 
-*Insert a short description what is required to get your project running...*
+Example for the pyproject.toml:
+
+```toml
+[tool.pylint.invoke-plugin-for-pylint]
+additional-invoke-task-decorators = [
+    "my_package.foo.make_task._inner",
+    "my_package.foo.make_other_task",
+]
+```
+
+## Build and Publish
+
+This project uses `setuptools` as the dependency management and build tool.
+To publish a new release, follow these steps:
+* Update the version in the `pyproject.toml`
+* Add an entry in the changelog
+* Push a new tag like `vX.X.X` to trigger the release
 
 ## Support, Feedback, Contributing
 
-This project is open to feature requests/suggestions, bug reports etc. via [GitHub issues](https://github.com/SAP/<your-project>/issues). Contribution and feedback are encouraged and always welcome. For more information about how to contribute, the project structure, as well as additional contribution information, see our [Contribution Guidelines](CONTRIBUTING.md).
+This project is open to feature requests/suggestions, bug reports etc. via [GitHub issues](https://github.com/SAP/invoke-plugin-for-pylint/issues). Contribution and feedback are encouraged and always welcome. For more information about how to contribute, the project structure, as well as additional contribution information, see our [Contribution Guidelines](CONTRIBUTING.md).
 
 ## Code of Conduct
 
-We as members, contributors, and leaders pledge to make participation in our community a harassment-free experience for everyone. By participating in this project, you agree to abide by its [Code of Conduct](https://github.com/SAP/.github/blob/main/CODE_OF_CONDUCT.md) at all times.
+We as members, contributors, and leaders pledge to make participation in our community a harassment-free experience for everyone. By participating in this project, you agree to abide by its [Code of Conduct](CODE_OF_CONDUCT.md) at all times.
 
 ## Licensing
 
-Copyright (20xx-)20xx SAP SE or an SAP affiliate company and <your-project> contributors. Please see our [LICENSE](LICENSE) for copyright and license information. Detailed information including third-party components and their licensing/copyright information is available [via the REUSE tool](https://api.reuse.software/info/github.com/SAP/<your-project>).
+Copyright 2023 SAP SE or an SAP affiliate company and invoke-plugin-for-pylint contributors. Please see our [LICENSE](LICENSE) for copyright and license information. Detailed information including third-party components and their licensing/copyright information is available [via the REUSE tool](https://api.reuse.software/info/github.com/SAP/invoke-plugin-for-pylint).
