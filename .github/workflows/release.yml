@@ -1,0 +1,25 @@
+name: Release
+
+on:
+  push:
+    tags:
+      - v*
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v3
+    - name: Setup python
+      uses: actions/setup-python@v4
+      with:
+        python-version: "3.11"
+    - name: Install project
+      run: pip install -e .[dev]
+    - name: Install libraries
+      run: pip install -U build twine
+    - name: Create wheel
+      run: python -m build -o dist/ .
+    - name: Upload wheel
+      run: twine upload -u __token__ -p ${{ secrets.PYPI_API_TOKEN }} --non-interactive "dist/*"
