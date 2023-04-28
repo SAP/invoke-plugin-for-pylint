@@ -15,7 +15,7 @@ Add `invoke_plugin_for_pylint` to the list of pylint plugins.
 ## Disabled check
 
 * unused-argument: Each invoke task needs a context argument even if not needed.
-  Therefore his plugin will find all tasks and suppress all `unused-argument` errors when related to the context argument
+  Therefore this plugin will find all tasks and suppress all `unused-argument` errors when related to the context argument
 
 
 ## Configuration
