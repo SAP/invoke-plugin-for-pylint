@@ -55,10 +55,10 @@ dev = [
 ]
 
 [tool.setuptools.packages.find]
-include = ["invoke_plugin_for_invoke"]
+include = ["invoke_plugin_for_pylint"]
 
 [tool.setuptools.package-data]
-invoke_plugin_for_invoke = ["py.typed"]
+invoke_plugin_for_pylint = ["py.typed"]
 
 [tool.isort]
 profile = "black"
