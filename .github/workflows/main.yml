@@ -13,7 +13,7 @@ jobs:
       matrix:
         python-version: ["3.7", "3.8", "3.9", "3.10", "3.11"]
         pylint-version: ["2.11.*", "2.*"]
-        invoke-version: ["1.*", "2.*"]
+        invoke-version: ["2.*"]
         exclude:
           - python-version: "3.11"
             invoke-version: "1.*"

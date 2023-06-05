@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "invoke-plugin-for-pylint"
-version = "1.0.1"
+version = "2.0.0"
 description = "Pylint plugin which disables checks for proper integration with invoke"
 authors = [{ name = "Kai Mueller", email = "kai.mueller01@sap.com"}]
 readme = "README.md"
@@ -28,7 +28,7 @@ classifiers = [
 ]
 requires-python = ">=3.7,<4"
 dependencies = [
-    "invoke>=1.5,<3",
+    "invoke>=2,<3",
     "pylint~=2.11",
 ]
 
