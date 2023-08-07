@@ -1,5 +1,8 @@
 # Changelog
 
+# 2.1.0
+* Support python 3.12
+
 # 2.0.0
 * Removed support for invoke 1.x
 
