@@ -12,7 +12,7 @@ from pylint.testutils import UnittestLinter
 from pylint.utils import ASTWalker
 from pytest_mock import MockerFixture
 
-from invoke_plugin_for_pylint._plugin import _PL14, InvokeChecker, register
+from invoke_plugin_for_pylint._plugin import InvokeChecker, register
 
 NON_TASK_UNUSED = "def foo(bar): pass"
 NON_TASK_USED = "def foo(bar): bar += 2"
@@ -164,10 +164,7 @@ def test_plugin_with_option(code: str, error: bool) -> None:
 
     invoke_checker = InvokeChecker(linter)
     walker.add_checker(invoke_checker)
-    if _PL14:
-        linter.config.additional_invoke_task_decorators = [".deco"]
-    else:
-        invoke_checker.config.additional_invoke_task_decorators = [".deco"]
+    invoke_checker.linter.config.additional_invoke_task_decorators = [".deco"]
 
     node = astroid.parse(code)
     walker.walk(node)

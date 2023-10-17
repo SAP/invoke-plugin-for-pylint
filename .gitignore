@@ -51,7 +51,7 @@ celerybeat.pid
 .env
 .venv
 env/
-venv/
+venv*/
 
 # mypy
 .mypy_cache/
