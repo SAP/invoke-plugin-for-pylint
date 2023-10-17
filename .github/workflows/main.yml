@@ -17,7 +17,7 @@ jobs:
         with:
           python-version: "3.12"
       - name: Install project
-        run: pip install -e .[check]
+        run: pip install -e .[check,test]
       - name: run pre-commit
         run: "pre-commit run --all"
   ci-test:
