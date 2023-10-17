@@ -74,12 +74,16 @@ warn_no_return = true
 warn_unreachable = true
 strict = true
 warn_unused_ignores = false
-python_version = "3.8"
+warn_return_any = false
+disallow_untyped_calls = false
 # output
 pretty = true
 show_column_numbers = true
 show_error_codes = true
 show_traceback = true
+# error config
+disable_error_code = ["type-abstract"]
+enable_error_code = ["explicit-override"]
 
 [[tool.mypy.overrides]]
 ignore_missing_imports = true
