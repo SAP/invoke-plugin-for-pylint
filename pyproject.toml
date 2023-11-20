@@ -46,7 +46,7 @@ check = [
     "black==23.11.0",
     "isort==5.12.0",
     "mypy==1.7.0",
-    "types-invoke==2.0.0.9",
+    "types-invoke==2.0.0.10",
 ]
 test = [
     "pytest==7.4.2",
