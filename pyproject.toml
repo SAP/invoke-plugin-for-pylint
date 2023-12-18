@@ -44,7 +44,7 @@ check = [
     "pre-commit==3.6.0",
     "pylint==3.0.3",
     "black==23.11.0",
-    "isort==5.13.1",
+    "isort==5.13.2",
     "mypy==1.7.1",
     "types-invoke==2.0.0.10",
 ]
