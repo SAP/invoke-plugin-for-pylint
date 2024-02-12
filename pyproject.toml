@@ -43,7 +43,7 @@ text = "Apache-2.0"
 check = [
     "pre-commit==3.6.1",
     "pylint==3.0.3",
-    "black==24.1.1",
+    "black==24.2.0",
     "isort==5.13.2",
     "mypy==1.8.0",
     "types-invoke==2.0.0.10",
