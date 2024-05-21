@@ -49,7 +49,7 @@ check = [
     "types-invoke==2.0.0.10",
 ]
 test = [
-    "pytest==8.2.0",
+    "pytest==8.2.1",
     "pytest-mock==3.14.0",
     "coverage[toml]==7.5.1",
     "diff-cover==9.0.0",
