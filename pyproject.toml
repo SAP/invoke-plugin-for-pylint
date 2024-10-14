@@ -45,7 +45,7 @@ check = [
     "pylint==3.3.1",
     "black==24.10.0",
     "isort==5.13.2",
-    "mypy==1.11.2",
+    "mypy==1.12.0",
     "types-invoke==2.0.0.10",
 ]
 test = [
