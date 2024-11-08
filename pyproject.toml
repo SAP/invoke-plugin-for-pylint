@@ -6,7 +6,7 @@ build-backend = "setuptools.build_meta"
 name = "invoke-plugin-for-pylint"
 version = "4.0.0"
 description = "Pylint plugin which disables checks for proper integration with invoke"
-authors = [{ name = "Kai Mueller", email = "kai.mueller01@sap.com"}]
+authors = [{ name = "Kai Harder", email = "kai.harder@sap.com"}]
 readme = "README.md"
 keywords = ["pylint", "invoke", "plugin", "inv", "linter"]
 classifiers = [
