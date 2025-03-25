@@ -13,7 +13,6 @@ classifiers = [
     "Development Status :: 5 - Production/Stable",
     "Environment :: Plugins",
     "Intended Audience :: Developers",
-    "License :: OSI Approved :: Apache Software License",
     "Natural Language :: English",
     "Operating System :: OS Independent",
     "Programming Language :: Python :: 3",
@@ -31,9 +30,8 @@ dependencies = [
     "invoke~=2.0",
     "pylint~=3.0",
 ]
-
-[project.license]
-text = "Apache-2.0"
+license = "Apache-2.0"
+license-files = ["LICENSE"]
 
 [project.urls]
 "Issue Tracker" = "https://github.com/SAP/invoke-plugin-for-pylint/issues"
