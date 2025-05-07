@@ -65,15 +65,18 @@ jobs:
     runs-on: ubuntu-latest
     if: success()
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
         with:
-          fetch-depth: 0
+          python-version: "3.13"
       - name: Download coverage files
         uses: actions/download-artifact@v4
         with:
           merge-multiple: true
           path: .
+      - name: Debug workspace
+        run: |
+          echo "Workspace:"
+          ls -la
       - name: Combine coverage files
         run: |
           pip install coverage
