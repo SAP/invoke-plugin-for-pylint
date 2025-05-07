@@ -49,15 +49,16 @@ jobs:
         run: "pytest --cov invoke_plugin_for_pylint --cov-report html --cov-report xml tests/"
       - name: run diff-cover
         run: "diff-cover --config-file pyproject.toml coverage.xml"
-      - name: create uuid
+      - name: Rename coverage file
         run: |
           UUID=$(uuidgen)
           echo "UUID=${UUID}" >> $GITHUB_ENV
+          mv .coverage .coverage.${{ env.UUID }}
       - name: upload coverage file
         uses: actions/upload-artifact@v4
         with:
           name: .coverage.${{ env.UUID }}
-          path: ./.coverage
+          path: .coverage.${{ env.UUID }}
           if-no-files-found: error
           include-hidden-files: true
   ci-coverage-reporting:
