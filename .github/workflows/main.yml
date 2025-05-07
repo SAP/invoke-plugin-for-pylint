@@ -66,6 +66,9 @@ jobs:
     runs-on: ubuntu-latest
     if: success()
     steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
       - uses: actions/setup-python@v5
         with:
           python-version: "3.13"
@@ -74,18 +77,16 @@ jobs:
         with:
           merge-multiple: true
           path: coverage_files
-      - name: Debug workspace
-        run: |
-          ls -la
-          ls -la coverage_files
       - name: Prepare coverage files
         run: |
           pip install coverage
           cd coverage_files
           coverage combine
+          mv .coverage ../.coverage
+          cd ..
           coverage xml
       - name: Upload to Coveralls
         uses: coverallsapp/github-action@v2
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
-          file: coverage_files/coverage.xml
+          file: coverage.xml
