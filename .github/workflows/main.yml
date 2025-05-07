@@ -43,3 +43,5 @@ jobs:
         run: "pytest --cov invoke_plugin_for_pylint --cov-report html --cov-report xml tests/"
       - name: run diff-cover
         run: "diff-cover --config-file pyproject.toml coverage.xml"
+      - name: Coveralls
+        uses: coverallsapp/github-action@v2
