@@ -43,6 +43,8 @@ jobs:
         run: "pytest --cov invoke_plugin_for_pylint --cov-report html --cov-report xml tests/"
       - name: run diff-cover
         run: "diff-cover --config-file pyproject.toml coverage.xml"
+      - name: Debug workspace
+        run: ls -la
       - name: upload coverage file
         uses: actions/upload-artifact@v4
         with:
