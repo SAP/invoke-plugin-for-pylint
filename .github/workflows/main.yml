@@ -43,14 +43,13 @@ jobs:
         run: "pytest --cov invoke_plugin_for_pylint --cov-report html --cov-report xml tests/"
       - name: run diff-cover
         run: "diff-cover --config-file pyproject.toml coverage.xml"
-      - name: rename coverage file
-        run: mv .coverage .coverage-${{ matrix.python-version }}
       - name: upload coverage file
         uses: actions/upload-artifact@v4
         with:
           name: .coverage-${{ matrix.python-version }}
+          path: .coverage
 
-  coverage-reporting:
+  ci-coverage-reporting:
     needs: ci-test
     runs-on: ubuntu-latest
     if: success()
