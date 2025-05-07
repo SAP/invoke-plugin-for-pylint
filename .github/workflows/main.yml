@@ -6,6 +6,10 @@ on:
   pull_request:
     branches: [ main ]
 
+permissions:
+  contents: read
+  pull_request: write
+
 jobs:
   ci-pre-commit:
     runs-on: ubuntu-latest
@@ -59,7 +63,7 @@ jobs:
         with:
           fetch-depth: 0
       - name: Download coverage files
-        uses: actions/download-artifact@v3
+        uses: actions/download-artifact@v4
         with:
           name: .coverage-*
       - name: Combine coverage files
