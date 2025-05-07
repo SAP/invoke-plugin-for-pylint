@@ -72,7 +72,7 @@ jobs:
         uses: actions/download-artifact@v4
         with:
           merge-multiple: true
-          path: .
+          path: $GITHUB_WORKSPACE
       - name: Debug workspace
         run: |
           echo "Workspace:"
