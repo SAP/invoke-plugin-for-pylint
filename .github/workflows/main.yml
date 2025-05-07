@@ -72,16 +72,18 @@ jobs:
         uses: actions/download-artifact@v4
         with:
           merge-multiple: true
-          path: $GITHUB_WORKSPACE
+          path: coverage_files
       - name: Debug workspace
         run: |
-          echo "Workspace:"
           ls -la
+          ls -la coverage_files
       - name: Combine coverage files
         run: |
           pip install coverage
+          cd coverage_files
           coverage combine
       - name: Upload to Coveralls
         uses: coverallsapp/github-action@v2
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
+          file: coverage_files/.coverage
