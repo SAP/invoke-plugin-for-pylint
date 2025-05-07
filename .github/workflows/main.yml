@@ -54,7 +54,7 @@ jobs:
       - name: upload coverage file
         uses: actions/upload-artifact@v4
         with:
-          name: .coverage-${{ github.job }}
+          name: .coverage-${{ github.run_id }}
           path: ./.coverage
           if-no-files-found: error
           include-hidden-files: true
