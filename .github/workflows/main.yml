@@ -57,6 +57,7 @@ jobs:
           name: .coverage-${{ matrix.python-version }}
           path: ./.coverage
           if-no-files-found: error
+          include-hidden-files: true
   ci-coverage-reporting:
     needs: ci-test
     runs-on: ubuntu-latest
