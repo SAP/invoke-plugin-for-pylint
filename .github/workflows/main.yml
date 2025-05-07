@@ -43,5 +43,31 @@ jobs:
         run: "pytest --cov invoke_plugin_for_pylint --cov-report html --cov-report xml tests/"
       - name: run diff-cover
         run: "diff-cover --config-file pyproject.toml coverage.xml"
-      - name: Coveralls
+      - name: rename coverage file
+        run: mv .coverage .coverage-${{ matrix.python-version }}
+      - name: upload coverage file
+        uses: actions/upload-artifact@v4
+        with:
+          name: .coverage-${{ matrix.python-version }}
+
+  coverage-reporting:
+    needs: ci-test
+    runs-on: ubuntu-latest
+    if: success()
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Download coverage files
+        uses: actions/download-artifact@v3
+        with:
+          name: .coverage-*
+      - name: Combine coverage files
+        run: |
+          pip install coverage
+          coverage combine
+      - name: Upload to Coveralls
         uses: coverallsapp/github-action@v2
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}

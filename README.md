@@ -2,6 +2,7 @@
 [![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
 [![Imports: isort](https://img.shields.io/badge/%20imports-isort-%231674b1?style=flat&labelColor=ef8336)](https://pycqa.github.io/isort/)
 [![PyPI version](https://badge.fury.io/py/invoke-plugin-for-pylint.svg)](https://badge.fury.io/py/invoke-plugin-for-pylint)
+[![Coverage Status](https://coveralls.io/repos/github/SAP/invoke-plugin-for-pylint/badge.svg?branch=coveralls)](https://coveralls.io/github/SAP/invoke-plugin-for-pylint?branch=coveralls)
 
 # Invoke Plugin for Pylint
 This is a plugin for pylint which disables certain checks when using invoke.
