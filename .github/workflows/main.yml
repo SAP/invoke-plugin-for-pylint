@@ -6,10 +6,6 @@ on:
   pull_request:
     branches: [ main ]
 
-permissions:
-  contents: read
-  pull_request: write
-
 jobs:
   ci-pre-commit:
     runs-on: ubuntu-latest
