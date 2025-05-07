@@ -48,7 +48,6 @@ jobs:
         with:
           name: .coverage-${{ matrix.python-version }}
           path: .coverage
-
   ci-coverage-reporting:
     needs: ci-test
     runs-on: ubuntu-latest
@@ -60,8 +59,6 @@ jobs:
           fetch-depth: 0
       - name: Download coverage files
         uses: actions/download-artifact@v4
-        with:
-          name: .coverage-*
       - name: Combine coverage files
         run: |
           pip install coverage
