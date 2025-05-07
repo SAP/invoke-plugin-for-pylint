@@ -53,7 +53,7 @@ jobs:
         run: |
           UUID=$(uuidgen)
           echo "UUID=${UUID}" >> $GITHUB_ENV
-          mv .coverage .coverage.${{ env.UUID }}
+          mv .coverage .coverage.${UUID}
       - name: upload coverage file
         uses: actions/upload-artifact@v4
         with:
