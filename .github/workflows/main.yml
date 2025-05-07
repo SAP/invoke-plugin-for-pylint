@@ -46,7 +46,7 @@ jobs:
       - name: "Install dependencies"
         run: "pip install -U pylint==${{ matrix.pylint-version }} invoke==${{ matrix.invoke-version }}"
       - name: run tests (with coverage)
-        run: "pytest --cov invoke_plugin_for_pylint --cov tests tests/"
+        run: "pytest --cov invoke_plugin_for_pylint --cov tests --cov-report xml tests/"
       - name: run diff-cover
         run: "diff-cover --config-file pyproject.toml coverage.xml"
       - name: Rename coverage file
