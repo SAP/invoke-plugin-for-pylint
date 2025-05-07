@@ -54,7 +54,7 @@ jobs:
       - name: upload coverage file
         uses: actions/upload-artifact@v4
         with:
-          name: .coverage-${{ matrix.python-version }}-${{ matrix.pylint-version }}-${{ matrix.invoke-version }}
+          name: .coverage-${{ github.job }}
           path: ./.coverage
           if-no-files-found: error
           include-hidden-files: true
