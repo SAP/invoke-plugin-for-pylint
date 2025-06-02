@@ -44,7 +44,7 @@ def _inject(linter: PyLinter) -> None:
     VariablesChecker.add_message = _new_add_message  # type:ignore[method-assign]
 
 
-class InvokeChecker(BaseChecker):  # type:ignore
+class InvokeChecker(BaseChecker):
     """Pylint invoke checker.
 
     The checker will prevent 'unused-argument' for invoke task context arguments.
