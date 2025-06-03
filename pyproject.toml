@@ -50,7 +50,7 @@ check = [
     "yesqa==1.5.0",
 ]
 test = [
-    "pytest==8.3.5",
+    "pytest==8.4.0",
     "pytest-mock==3.14.1",
     "coverage[toml]==7.8.2",
     "diff-cover==9.3.1",
