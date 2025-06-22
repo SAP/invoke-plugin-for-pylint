@@ -46,7 +46,7 @@ check = [
     "mypy==1.16.1",
     "types-invoke==2.0.0.10",
     "flake8==7.2.0",
-    "flake8-tergeo==25.5.22.0",
+    "flake8-tergeo==25.6.11.0",
     "yesqa==1.5.0",
 ]
 test = [
