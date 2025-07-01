@@ -10,7 +10,10 @@ select =
 ignore=
     # conflict with black formatter
     W503,E203,
-
+    # some things don't need a docstring
+    FTP305,
+per-file-ignores =
+    tests/*:FTP300,FTP301,FTP302,FTP303,FTP304
 ftp-python-version = 3.9.0
 ftp-auto-manage-options = true
 ftp-pytest-parametrize-names-type = csv
