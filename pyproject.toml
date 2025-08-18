@@ -37,7 +37,7 @@ license-files = ["LICENSE"]
 "Issue Tracker" = "https://github.com/SAP/invoke-plugin-for-pylint/issues"
 "Changelog" = "https://github.com/SAP/invoke-plugin-for-pylint/blob/main/CHANGELOG.md"
 
-[project.optional-dependencies]
+[dependency-groups]
 check = [
     "pre-commit==4.3.0",
     "pylint==3.3.8",
