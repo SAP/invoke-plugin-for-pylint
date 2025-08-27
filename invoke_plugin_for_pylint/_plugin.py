@@ -5,7 +5,7 @@ from __future__ import annotations
 
 from typing import Any
 
-from astroid.nodes import Arguments, AssignName, FunctionDef, NodeNG
+from astroid.nodes import Arguments, AssignName, FunctionDef
 from pylint.checkers import BaseChecker
 from pylint.checkers.variables import VariablesChecker
 from pylint.lint import PyLinter
@@ -14,21 +14,15 @@ from pylint.lint import PyLinter
 def _inject(linter: PyLinter) -> None:
     original = VariablesChecker.add_message
 
-    def _new_add_message(
-        self: Any,
-        msgid: str,
-        *args: Any,
-        line: Any = None,
-        node: NodeNG | None = None,
-        **kwargs: Any,
-    ) -> None:
+    def _new_add_message(*args: Any, **kwargs: Any) -> None:
         config = linter.config
         decorators = config.additional_invoke_task_decorators + [
             "invoke.tasks.task.inner",
             "invoke.tasks.task",
         ]
+        node = kwargs.get("node", args[3] if len(args) > 3 else None)
         if (
-            msgid == "unused-argument"
+            args[1] == "unused-argument"
             and isinstance(node, AssignName)
             and node.name == "context"
             and isinstance(node.parent, Arguments)
@@ -39,7 +33,7 @@ def _inject(linter: PyLinter) -> None:
             )
         ):
             return
-        original(self, msgid, line, node, *args, **kwargs)
+        original(*args, **kwargs)
 
     VariablesChecker.add_message = _new_add_message  # type:ignore[method-assign]
 

@@ -1,5 +1,8 @@
 # Changelog
 
+# 4.0.1
+* Fix compatibility with other pylint plugins
+
 # 4.0.0
 * Minimum required pylint version is 3.0
 * Support python 3.13
