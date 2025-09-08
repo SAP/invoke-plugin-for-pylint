@@ -53,6 +53,7 @@ Changelog = "https://github.com/SAP/invoke-plugin-for-pylint/blob/main/CHANGELOG
 check = [
     "pre-commit==4.3.0",
     "pylint==3.3.8",
+        "pylint-per-file-ignores==2.0.3",
     "black==25.1.0",
     "isort==6.0.1",
     "mypy==1.17.1",
@@ -130,12 +131,25 @@ min-public-methods = 0
 [tool.pylint.master]
 load-plugins = [
     "invoke_plugin_for_pylint",
+    "pylint_per_file_ignores",
+    "pylint.extensions.bad_builtin",
+    "pylint.extensions.check_elif",
+    "pylint.extensions.code_style",
+    "pylint.extensions.comparison_placement",
+    "pylint.extensions.confusing_elif",
+    "pylint.extensions.dict_init_mutate",
+    "pylint.extensions.docparams",
+    "pylint.extensions.docstyle",
+    "pylint.extensions.empty_comment",
+    "pylint.extensions.eq_without_hash",
+    "pylint.extensions.for_any_all",
+    "pylint.extensions.overlapping_exceptions",
+    "pylint.extensions.private_import",
+    "pylint.extensions.set_membership",
+    "pylint.extensions.typing",
 ]
 max-line-length = 100
-py-version = [
-    3,
-    9,
-]
+py-version = 3.9
 
 [tool.pylint."messages control"]
 disable = [
@@ -143,9 +157,8 @@ disable = [
     "locally-disabled",
     "suppressed-message",
 ]
-enable = [
-    "all",
-]
+enable = ["all"]
+per-file-ignores = "tests/**:missing-function-docstring,missing-class-docstring,redefined-outer-name,protected-access,unused-argument,import-private-name"
 
 [tool.pylint.reports]
 reports = false
