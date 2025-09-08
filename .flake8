@@ -17,3 +17,8 @@ per-file-ignores =
 ftp-python-version = 3.9.0
 ftp-auto-manage-options = true
 ftp-pytest-parametrize-names-type = csv
+ftp-distribution-name = invoke-plugin-for-pylint
+ftp-requirements-packages = tests,invoke_plugin_for_pylint
+ftp-requirements-module-extra-mapping =
+    tests | *,
+ftp-pyproject-toml-file = pyproject.toml
