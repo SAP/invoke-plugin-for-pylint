@@ -1,10 +1,10 @@
-version = 1
+SPDX-PackageDownloadLocation = "https://github.com/SAP/invoke-plugin-for-pylint"
 SPDX-PackageName = "invoke-plugin-for-pylint"
 SPDX-PackageSupplier = "kai.harder@sap.com"
-SPDX-PackageDownloadLocation = "https://github.com/SAP/invoke-plugin-for-pylint"
+version = 1
 
 [[annotations]]
-path = "**"
-precedence = "aggregate"
 SPDX-FileCopyrightText = "2025 SAP SE or an SAP affiliate company and invoke-plugin-for-pylint contributors"
 SPDX-License-Identifier = "Apache-2.0"
+path = "**"
+precedence = "aggregate"
