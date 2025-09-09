@@ -65,7 +65,7 @@ check = [
     "toml-sort==0.24.2",
 ]
 test = [
-    "pytest==8.4.1",
+    "pytest==8.4.2",
     "pytest-mock==3.15.0",
     "coverage[toml]==7.10.6",
     "diff-cover==9.6.0",
