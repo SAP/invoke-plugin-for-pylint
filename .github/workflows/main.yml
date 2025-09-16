@@ -94,10 +94,10 @@ jobs:
       - name: Prepare coverage files
         run: |
           cd coverage_files
-          uv coverage combine
+          uv run coverage combine
           mv .coverage ../.coverage
           cd ..
-          uv coverage xml
+          uv run coverage xml
       - name: Upload to Coveralls
         uses: coverallsapp/github-action@v2
         with:
