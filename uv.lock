@@ -481,7 +481,7 @@ wheels = [
 
 [[package]]
 name = "invoke-plugin-for-pylint"
-version = "4.0.1"
+version = "4.1.0"
 source = { editable = "." }
 dependencies = [
     { name = "astroid" },

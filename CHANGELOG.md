@@ -1,5 +1,8 @@
 # Changelog
 
+# 4.1.0
+* Add support for python 3.14
+
 # 4.0.1
 * Fix compatibility with other pylint plugins
 
