@@ -21,6 +21,7 @@ classifiers = [
     "Programming Language :: Python :: 3.11",
     "Programming Language :: Python :: 3.12",
     "Programming Language :: Python :: 3.13",
+    "Programming Language :: Python :: 3.14",
     "Topic :: Software Development :: Quality Assurance",
     "Typing :: Typed",
 ]
@@ -44,7 +45,7 @@ license-files = [
 name = "invoke-plugin-for-pylint"
 readme = "README.md"
 requires-python = ">=3.9,<4"
-version = "4.0.1"
+version = "4.1.0"
 
 [project.urls]
 Changelog = "https://github.com/SAP/invoke-plugin-for-pylint/blob/main/CHANGELOG.md"
