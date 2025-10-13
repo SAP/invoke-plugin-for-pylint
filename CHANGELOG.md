@@ -1,5 +1,9 @@
 # Changelog
 
+# 5.0.0
+* Remove support for python 3.9
+* Add support for pylint 4
+
 # 4.1.0
 * Add support for python 3.14
 

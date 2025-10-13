@@ -16,7 +16,6 @@ classifiers = [
     "Operating System :: OS Independent",
     "Programming Language :: Python :: 3",
     "Programming Language :: Python :: 3 :: Only",
-    "Programming Language :: Python :: 3.9",
     "Programming Language :: Python :: 3.10",
     "Programming Language :: Python :: 3.11",
     "Programming Language :: Python :: 3.12",
@@ -27,8 +26,8 @@ classifiers = [
 ]
 dependencies = [
     "invoke~=2.0",
-    "pylint~=3.0",
-    "astroid~=3.0",
+    "pylint>=3.0,<5",
+    "astroid>=3.0,<5",
 ]
 description = "Pylint plugin which disables checks for proper integration with invoke"
 keywords = [
@@ -44,8 +43,8 @@ license-files = [
 ]
 name = "invoke-plugin-for-pylint"
 readme = "README.md"
-requires-python = ">=3.9,<4"
-version = "4.1.0"
+requires-python = ">=3.10,<4"
+version = "5.0.0"
 
 [project.urls]
 Changelog = "https://github.com/SAP/invoke-plugin-for-pylint/blob/main/CHANGELOG.md"
@@ -54,8 +53,8 @@ Changelog = "https://github.com/SAP/invoke-plugin-for-pylint/blob/main/CHANGELOG
 [dependency-groups]
 dev = [
     "pre-commit==4.3.0",
-    "pylint==3.3.9",
-    "pylint-per-file-ignores==2.0.3",
+    "pylint==4.0.0",
+    "pylint-per-file-ignores==3.1.0",
     "black==25.9.0",
     "isort==6.1.0",
     "mypy==1.18.2",
@@ -153,7 +152,7 @@ load-plugins = [
     "pylint.extensions.typing",
 ]
 max-line-length = 100
-py-version = 3.9
+py-version = 3.10
 
 [tool.pylint."messages control"]
 disable = [
