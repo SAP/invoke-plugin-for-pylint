@@ -52,7 +52,7 @@ Changelog = "https://github.com/SAP/invoke-plugin-for-pylint/blob/main/CHANGELOG
 
 [dependency-groups]
 dev = [
-    "pre-commit==4.3.0",
+    "pre-commit==4.4.0",
     "pylint==4.0.2",
     "pylint-per-file-ignores==3.1.0",
     "black==25.9.0",
