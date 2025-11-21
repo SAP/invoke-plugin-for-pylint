@@ -1,5 +1,7 @@
 # Changelog
 
+<!-- towncrier release notes start -->
+
 # 5.0.0
 * Remove support for python 3.9
 * Add support for pylint 4

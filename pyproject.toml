@@ -2,6 +2,7 @@
 build-backend = "setuptools.build_meta"
 requires = [
     "setuptools>=61",
+    "setuptools-scm~=9.2",
 ]
 
 [project]
@@ -30,6 +31,7 @@ dependencies = [
     "astroid>=3.0,<5",
 ]
 description = "Pylint plugin which disables checks for proper integration with invoke"
+dynamic = ["version"]
 keywords = [
     "pylint",
     "invoke",
@@ -44,7 +46,6 @@ license-files = [
 name = "invoke-plugin-for-pylint"
 readme = "README.md"
 requires-python = ">=3.10,<4"
-version = "5.0.0"
 
 [project.urls]
 Changelog = "https://github.com/SAP/invoke-plugin-for-pylint/blob/main/CHANGELOG.md"
@@ -65,6 +66,7 @@ dev = [
     "pyupgrade==3.21.1",
     "toml-sort==0.24.3",
     "uv==0.9.10",
+    "towncrier==25.8.0",
 ]
 test = [
     "pytest==9.0.0",
@@ -183,6 +185,9 @@ include = [
     "invoke_plugin_for_pylint",
 ]
 
+[tool.setuptools_scm]
+version_file = ""
+
 [tool.tomlsort]
 sort_first = [
     "build-system",
@@ -193,6 +198,33 @@ sort_first = [
 sort_table_keys = true
 spaces_indent_inline_array = 4
 trailing_comma_inline_array = true
+
+[tool.towncrier]
+directory = "news"
+filename = "CHANGELOG.md"
+start_string = "<!-- towncrier release notes start -->\n"
+title_format = "## {version} ({project_date})"
+underlines = ["", "", ""]
+
+[[tool.towncrier.type]]
+directory = "removal"
+name = "Removals"
+
+[[tool.towncrier.type]]
+directory = "deprecation"
+name = "Deprecations"
+
+[[tool.towncrier.type]]
+directory = "feature"
+name = "Features"
+
+[[tool.towncrier.type]]
+directory = "change"
+name = "Changes"
+
+[[tool.towncrier.type]]
+directory = "fix"
+name = "Fixes"
 
 [tool.uv]
 default-groups = []
