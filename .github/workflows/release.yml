@@ -20,6 +20,7 @@ jobs:
   create-release-pr:
     if: github.event_name == 'workflow_dispatch'
     runs-on: ubuntu-latest
+    environment: release
     permissions:
       contents: write
       pull-requests: write
@@ -92,7 +93,7 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git tag "v${{ steps.extract_version.outputs.version }}"
+          git tag -a "v${{ steps.extract_version.outputs.version }}" -m "Version ${{ steps.extract_version.outputs.version }}"
           git push origin "v${{ steps.extract_version.outputs.version }}"
       - name: Create wheel
         run: uv build -o dist/ .
