@@ -61,9 +61,7 @@ jobs:
       - name: Install dependencies
         run: uv pip install -U pylint==${{ matrix.pylint-version }} invoke==${{ matrix.invoke-version }}
       - name: run tests (with coverage)
-        run: uv run pytest --cov invoke_plugin_for_pylint --cov tests --cov-report xml tests/
-      - name: run diff-cover
-        run: uv run diff-cover --config-file pyproject.toml coverage.xml
+        run: uv run --no-sync pytest --cov invoke_plugin_for_pylint --cov tests --cov-report xml --cov-fail-under 0 tests/
       - name: Rename coverage file
         run: |
           UUID=$(uuidgen)
@@ -105,6 +103,8 @@ jobs:
           mv .coverage ../.coverage
           cd ..
           uv run coverage xml
+      - name: run diff-cover
+        run: uv run diff-cover --config-file pyproject.toml coverage.xml
       - name: Upload to Coveralls
         uses: coverallsapp/github-action@v2
         with:
