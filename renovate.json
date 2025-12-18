@@ -2,7 +2,8 @@
 	"$schema": "https://docs.renovatebot.com/renovate-schema.json",
 	"enabledManagers": [
 		"pep621",
-		"pre-commit"
+		"pre-commit",
+		"github-actions",
 	],
 	"extends": [
 		"config:recommended",
@@ -46,9 +47,10 @@
 			"automerge": true
 		},
 		{
-			"description": "Auto-merge pre-commit updates",
+			"description": "Auto-merge pre-commit/github-actions updates",
 			"matchManagers": [
-				"pre-commit"
+				"pre-commit", 
+				"github-actions"
 			],
 			"automerge": true
 		},
