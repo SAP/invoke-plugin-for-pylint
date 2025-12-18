@@ -3,7 +3,7 @@
 	"enabledManagers": [
 		"pep621",
 		"pre-commit",
-		"github-actions",
+		"github-actions"
 	],
 	"extends": [
 		"config:recommended",
@@ -49,7 +49,7 @@
 		{
 			"description": "Auto-merge pre-commit/github-actions updates",
 			"matchManagers": [
-				"pre-commit", 
+				"pre-commit",
 				"github-actions"
 			],
 			"automerge": true
