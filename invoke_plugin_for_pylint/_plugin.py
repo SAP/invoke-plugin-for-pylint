@@ -35,7 +35,7 @@ def _inject(linter: PyLinter) -> None:
             return
         original(*args, **kwargs)
 
-    VariablesChecker.add_message = _new_add_message  # type:ignore[method-assign]
+    VariablesChecker.add_message = _new_add_message  # type: ignore[method-assign]
 
 
 class InvokeChecker(BaseChecker):
