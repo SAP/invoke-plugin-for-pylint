@@ -1,9 +1,6 @@
 [build-system]
 build-backend = "setuptools.build_meta"
-requires = [
-    "setuptools>=61",
-    "setuptools-scm~=9.2",
-]
+requires = ["setuptools~=82.0", "setuptools-scm~=9.2"]
 
 [project]
 authors = [
@@ -174,6 +171,13 @@ reports = false
 
 [tool.pylint.similarities]
 ignore-imports = true
+
+[tool.pytest]
+addopts = ["-p", "no:legacypath"]
+filterwarnings = [
+    "error",
+]
+strict = true
 
 [tool.setuptools.package-data]
 invoke_plugin_for_pylint = [
