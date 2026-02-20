@@ -54,7 +54,7 @@ dev = [
     "pylint==4.0.5",
     "pylint-per-file-ignores==3.2.0",
     "black==26.1.0",
-    "isort==7.0.0",
+    "isort==8.0.0",
     "mypy==1.19.1",
     "types-invoke==2.0.0.10",
     "flake8==7.3.0",
