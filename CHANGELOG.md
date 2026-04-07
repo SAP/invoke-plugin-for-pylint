@@ -2,6 +2,13 @@
 
 <!-- towncrier release notes start -->
 
+## 5.2.0 (2026-04-07)
+
+### Features
+
+- Added support for invoke 3.x
+
+
 ## 5.1.0 (2025-11-21)
 
 ### Changes
