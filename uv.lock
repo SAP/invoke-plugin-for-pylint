@@ -493,7 +493,6 @@ dev = [
     { name = "pyupgrade" },
     { name = "toml-sort" },
     { name = "towncrier" },
-    { name = "types-invoke" },
     { name = "uv" },
     { name = "yesqa" },
 ]
@@ -526,7 +525,6 @@ dev = [
     { name = "pyupgrade", specifier = "==3.21.2" },
     { name = "toml-sort", specifier = "==0.24.4" },
     { name = "towncrier", specifier = "==25.8.0" },
-    { name = "types-invoke", specifier = "==2.0.0.10" },
     { name = "uv", specifier = "==0.11.3" },
     { name = "yesqa", specifier = "==1.5.0" },
 ]
@@ -1205,15 +1203,6 @@ dependencies = [
 sdist = { url = "https://files.pythonhosted.org/packages/c2/eb/5bf25a34123698d3bbab39c5bc5375f8f8bcbcc5a136964ade66935b8b9d/towncrier-25.8.0.tar.gz", hash = "sha256:eef16d29f831ad57abb3ae32a0565739866219f1ebfbdd297d32894eb9940eb1", size = 76322, upload-time = "2025-08-30T11:41:55.393Z" }
 wheels = [
     { url = "https://files.pythonhosted.org/packages/42/06/8ba22ec32c74ac1be3baa26116e3c28bc0e76a5387476921d20b6fdade11/towncrier-25.8.0-py3-none-any.whl", hash = "sha256:b953d133d98f9aeae9084b56a3563fd2519dfc6ec33f61c9cd2c61ff243fb513", size = 65101, upload-time = "2025-08-30T11:41:53.644Z" },
-]
-
-[[package]]
-name = "types-invoke"
-version = "2.0.0.10"
-source = { registry = "https://pypi.org/simple" }
-sdist = { url = "https://files.pythonhosted.org/packages/47/d3/9b0770d507a29753de0a0eb42fcb72e68963d9f12043eaaea3ff199467a1/types-invoke-2.0.0.10.tar.gz", hash = "sha256:a54d7ecdc19e0c22cd2786ef2e64c2631715c78eba8a1bf40b511d0608f33a88", size = 11300, upload-time = "2023-10-19T02:15:03.916Z" }
-wheels = [
-    { url = "https://files.pythonhosted.org/packages/5c/bc/c0c925a97fb214e195a408a9e2d611a70225afa2bf298b5f670eb46dfe0b/types_invoke-2.0.0.10-py3-none-any.whl", hash = "sha256:2404e4279601fa96e14ef68321fd10a660a828677aabdcaeef6a5189778084ef", size = 13942, upload-time = "2023-10-19T02:15:02.225Z" },
 ]
 
 [[package]]
