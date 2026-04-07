@@ -23,7 +23,7 @@ classifiers = [
     "Typing :: Typed",
 ]
 dependencies = [
-    "invoke~=2.0",
+    "invoke>=2.0,<4",
     "pylint>=3.0,<5",
     "astroid>=3.0,<5",
 ]
