@@ -97,5 +97,5 @@ jobs:
         uses: softprops/action-gh-release@v3
         with:
           files: dist/*
-          tag_name: v${{ inputs.version }}
-          name: Version ${{ inputs.version }}
+          tag_name: v${{ steps.extract_version.outputs.version }}
+          name: Version ${{ steps.extract_version.outputs.version }}
